@@ -1,4 +1,5 @@
 # dnscart
+```
         static Order domainOrder = new DomainOrder();
         /*
             TLD     PRICE
@@ -29,3 +30,4 @@
                 .setScale(2, RoundingMode.HALF_EVEN);
                 
         BigDecimal calculatedCart = shoppingCart.calculate();         
+```
