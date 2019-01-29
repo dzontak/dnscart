@@ -11,18 +11,31 @@ import com.dnsc.validation.SimpleDomainValidator;
 
 import java.math.BigDecimal;
 
+/**
+ * The type Domain order.
+ */
 public class DomainOrder implements Order {
 
     private PriceEngine priceEngine;
     private DomainValidator validator;
     private CalculationEngine calculationEngine;
 
+    /**
+     * Instantiates a new Domain order.
+     */
     public DomainOrder() {
         priceEngine = new InMemoryPriceEngine();
         validator = new SimpleDomainValidator();
         calculationEngine = new InMemoryCalculationEngine();
     }
 
+    /**
+     * Instantiates a new Domain order.
+     *
+     * @param priceEngine       the price engine
+     * @param validator         the validator
+     * @param calculationEngine the calculation engine
+     */
     public DomainOrder(PriceEngine priceEngine, DomainValidator validator,
                        CalculationEngine calculationEngine) {
         this.priceEngine = priceEngine;

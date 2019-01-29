@@ -7,6 +7,9 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * The type In memory price engine.
+ */
 public class InMemoryPriceEngine implements PriceEngine {
 
     private Map<DomainType, Price> priceMap = new HashMap<>();

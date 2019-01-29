@@ -12,6 +12,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * The type In memory calculation engine.
+ */
 @Slf4j
 public class InMemoryCalculationEngine implements CalculationEngine {
 

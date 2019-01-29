@@ -11,6 +11,9 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Domain cart.
+ */
 public class DomainCart implements Cart {
 
     private PriceEngine priceEngine;
@@ -18,6 +21,13 @@ public class DomainCart implements Cart {
     private DomainValidator validator;
     private List<LineItem> lineItems = new ArrayList<>();
 
+    /**
+     * Instantiates a new Domain cart.
+     *
+     * @param priceEngine       the price engine
+     * @param validator         the validator
+     * @param calculationEngine the calculation engine
+     */
     public DomainCart(PriceEngine priceEngine,
                       DomainValidator validator,
                       CalculationEngine calculationEngine) {

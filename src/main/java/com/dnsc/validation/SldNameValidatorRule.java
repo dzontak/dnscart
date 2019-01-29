@@ -2,8 +2,16 @@ package com.dnsc.validation;
 
 import java.util.regex.Pattern;
 
+/**
+ * The type Sld name validator rule.
+ */
 public class SldNameValidatorRule extends ValidationRule {
 
+    /**
+     * Instantiates a new Sld name validator rule.
+     *
+     * @param message Some description of the validation
+     */
     public SldNameValidatorRule(String message) {
         super(message);
     }

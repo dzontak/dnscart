@@ -3,11 +3,21 @@ package com.dnsc.domain;
 import java.math.BigDecimal;
 import java.util.Objects;
 
+/**
+ * The type Price.
+ */
 public class Price implements Comparable<Price> {
     private BigDecimal fixedPrice;
     private BigDecimal volumePrice;
     private int volume;
 
+    /**
+     * Instantiates a new Price.
+     *
+     * @param fixedPrice  the fixed price
+     * @param volumePrice the volume price
+     * @param volume      the volume
+     */
     public Price(BigDecimal fixedPrice, BigDecimal volumePrice, int volume) {
         this.fixedPrice = fixedPrice;
         this.volumePrice = volumePrice;
@@ -19,26 +29,56 @@ public class Price implements Comparable<Price> {
         return this.compareTo(o);
     }
 
+    /**
+     * Gets fixed price.
+     *
+     * @return the fixed price
+     */
     public BigDecimal getFixedPrice() {
         return fixedPrice;
     }
 
+    /**
+     * Sets fixed price.
+     *
+     * @param fixedPrice the fixed price
+     */
     public void setFixedPrice(BigDecimal fixedPrice) {
         this.fixedPrice = fixedPrice;
     }
 
+    /**
+     * Gets volume price.
+     *
+     * @return the volume price
+     */
     public BigDecimal getVolumePrice() {
         return volumePrice;
     }
 
+    /**
+     * Sets volume price.
+     *
+     * @param volumePrice the volume price
+     */
     public void setVolumePrice(BigDecimal volumePrice) {
         this.volumePrice = volumePrice;
     }
 
+    /**
+     * Gets volume.
+     *
+     * @return the volume
+     */
     public int getVolume() {
         return volume;
     }
 
+    /**
+     * Sets volume.
+     *
+     * @param volume the volume
+     */
     public void setVolume(int volume) {
         this.volume = volume;
     }

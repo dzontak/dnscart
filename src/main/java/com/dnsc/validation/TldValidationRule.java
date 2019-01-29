@@ -2,8 +2,16 @@ package com.dnsc.validation;
 
 import com.dnsc.domain.DomainType;
 
+/**
+ * The type Tld validation rule.
+ */
 public class TldValidationRule extends ValidationRule {
 
+    /**
+     * Instantiates a new Tld validation rule.
+     *
+     * @param message description of the validation
+     */
     public TldValidationRule(String message) {
         super(message);
     }
