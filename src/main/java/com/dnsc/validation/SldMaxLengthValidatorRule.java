@@ -5,15 +5,15 @@ import org.springframework.stereotype.Component;
 /**
  * The type Sld max length validator rule.
  */
+@Component
 public class SldMaxLengthValidatorRule extends ValidationRule {
 
     /**
      * Instantiates a new Sld max length validator rule.
      *
-     * @param message the message
      */
-    public SldMaxLengthValidatorRule(String message) {
-        super(message);
+    public SldMaxLengthValidatorRule() {
+        super("A domain's SLD may have no more than 63 characters");
     }
 
     @Override

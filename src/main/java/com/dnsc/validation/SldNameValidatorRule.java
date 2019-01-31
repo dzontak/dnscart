@@ -7,15 +7,15 @@ import java.util.regex.Pattern;
 /**
  * The type Sld name validator rule.
  */
+@Component
 public class SldNameValidatorRule extends ValidationRule {
 
     /**
      * Instantiates a new Sld name validator rule.
      *
-     * @param message Some description of the validation
      */
-    public SldNameValidatorRule(String message) {
-        super(message);
+    public SldNameValidatorRule() {
+        super("A domain's SLD may only include numbers, letters, and dashes");
     }
 
     @Override

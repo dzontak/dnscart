@@ -6,15 +6,15 @@ import org.springframework.stereotype.Component;
 /**
  * The type Tld validation rule.
  */
+@Component
 public class TldValidationRule extends ValidationRule {
 
     /**
      * Instantiates a new Tld validation rule.
      *
-     * @param message description of the validation
      */
-    public TldValidationRule(String message) {
-        super(message);
+    public TldValidationRule() {
+        super("A domain must include a valid TLD");
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.dnsc.validation;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -11,17 +12,12 @@ import java.util.List;
 @Component
 public class SimpleDomainValidator implements DomainValidator {
 
-    private List<ValidationRule> validationRules = new ArrayList<>();
+    private List<ValidationRule> validationRules;
 
-    /**
-     * Instantiates a new Simple domain validator.
-     */
-    public SimpleDomainValidator() {
-        validationRules.add(new TldValidationRule("A domain must include a valid TLD"));
-        validationRules.add(new SldMaxLengthValidatorRule("A domain's SLD may only include numbers, letters, and dashes"));
-        validationRules.add(new SldMaxLengthValidatorRule("A domain's SLD may only include numbers, letters, and dashes"));
+    @Autowired
+    public SimpleDomainValidator(List<ValidationRule> validationRules) {
+        this.validationRules = validationRules;
     }
-
 
     @Override
     public boolean validate(String domain) {
@@ -33,5 +29,4 @@ public class SimpleDomainValidator implements DomainValidator {
         }
         return true;
     }
-
 }
