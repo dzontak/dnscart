@@ -18,7 +18,7 @@ import java.math.RoundingMode;
 public class ShoppingCartTest {
 
     @Autowired
-     Order domainOrder;
+    Order domainOrder;
 
     @Before
     public void setUp() {
@@ -64,10 +64,11 @@ public class ShoppingCartTest {
 
         Cart shoppingCart = domainOrder.newShoppingCart();
         shoppingCart.addItem("google.com");
+        Assert.assertEquals(1, shoppingCart.getItems().size());
     }
 
     @Test(expected = ValidationException.class)
-    public void shouldFailtToAddInvalidDomain() {
+    public void shouldFailToAddInvalidDomain() {
 
         Cart shoppingCart = domainOrder.newShoppingCart();
         shoppingCart.addItem("google.c");
