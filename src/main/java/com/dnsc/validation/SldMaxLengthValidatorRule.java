@@ -1,5 +1,7 @@
 package com.dnsc.validation;
 
+import org.springframework.stereotype.Component;
+
 /**
  * The type Sld max length validator rule.
  */

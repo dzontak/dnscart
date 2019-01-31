@@ -1,5 +1,7 @@
 package com.dnsc.validation;
 
+import org.springframework.stereotype.Component;
+
 import java.util.regex.Pattern;
 
 /**

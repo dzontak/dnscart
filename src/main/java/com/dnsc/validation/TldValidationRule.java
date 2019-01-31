@@ -1,6 +1,7 @@
 package com.dnsc.validation;
 
 import com.dnsc.domain.DomainType;
+import org.springframework.stereotype.Component;
 
 /**
  * The type Tld validation rule.

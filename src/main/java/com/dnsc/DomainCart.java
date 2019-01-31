@@ -6,6 +6,8 @@ import com.dnsc.domain.LineItem;
 import com.dnsc.price.CalculationEngine;
 import com.dnsc.price.PriceEngine;
 import com.dnsc.validation.DomainValidator;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -14,6 +16,7 @@ import java.util.List;
 /**
  * The type Domain cart.
  */
+@Component
 public class DomainCart implements Cart {
 
     private PriceEngine priceEngine;
@@ -28,6 +31,7 @@ public class DomainCart implements Cart {
      * @param validator         the validator
      * @param calculationEngine the calculation engine
      */
+    @Autowired
     public DomainCart(PriceEngine priceEngine,
                       DomainValidator validator,
                       CalculationEngine calculationEngine) {

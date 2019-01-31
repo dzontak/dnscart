@@ -1,5 +1,6 @@
 package com.dnsc.validation;
 
+
 /**
  * The type Validation rule.
  */

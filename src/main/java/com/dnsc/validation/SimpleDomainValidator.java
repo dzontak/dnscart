@@ -1,11 +1,14 @@
 package com.dnsc.validation;
 
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * The type Simple domain validator.
  */
+@Component
 public class SimpleDomainValidator implements DomainValidator {
 
     private List<ValidationRule> validationRules = new ArrayList<>();
@@ -19,14 +22,6 @@ public class SimpleDomainValidator implements DomainValidator {
         validationRules.add(new SldMaxLengthValidatorRule("A domain's SLD may only include numbers, letters, and dashes"));
     }
 
-    /**
-     * Instantiates a new Simple domain validator.
-     *
-     * @param validationRules the validation rules
-     */
-    public SimpleDomainValidator(List<ValidationRule> validationRules) {
-        this.validationRules = validationRules;
-    }
 
     @Override
     public boolean validate(String domain) {

@@ -4,6 +4,7 @@ import com.dnsc.domain.DomainType;
 import com.dnsc.domain.LineItem;
 import com.dnsc.domain.Price;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -16,6 +17,7 @@ import java.util.Map;
  * The type In memory calculation engine.
  */
 @Slf4j
+@Component
 public class InMemoryCalculationEngine implements CalculationEngine {
 
     @Override
