@@ -7,7 +7,6 @@ public class LineItem {
 
     private String name;
     private DomainType domainType;
-    private Price price;
 
     /**
      * Instantiates a new Line item.
@@ -16,10 +15,9 @@ public class LineItem {
      * @param domainType the domain type
      * @param price      the price
      */
-    public LineItem(String name, DomainType domainType, Price price) {
+    public LineItem(String name, DomainType domainType) {
         this.name = name;
         this.domainType = domainType;
-        this.price = price;
     }
 
     /**
@@ -58,33 +56,9 @@ public class LineItem {
         this.domainType = domainType;
     }
 
-    /**
-     * Gets price.
-     *
-     * @return the price
-     */
-    public Price getPrice() {
-        return price;
-    }
-
-    /**
-     * Sets price.
-     *
-     * @param price the price
-     */
-    public void setPrice(Price price) {
-        this.price = price;
-    }
-
     @Override
     public String toString() {
-        return "LineItem{" +
-                "name='" + name + '\'' +
-                ", domainType=" + domainType +
-                ", price=" + price +
-                '}';
+        return "LineItem{" + "name='" + name + '\'' + ", domainType=" + domainType + '}';
     }
-
-
 
 }

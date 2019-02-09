@@ -1,6 +1,5 @@
 package com.dnsc;
 
-
 import com.dnsc.domain.DomainType;
 import com.dnsc.domain.LineItem;
 import com.dnsc.price.CalculationEngine;
@@ -19,7 +18,6 @@ import java.util.List;
 @Component
 public class DomainCart implements Cart {
 
-    private PriceEngine priceEngine;
     private CalculationEngine calculationEngine;
     private DomainValidator validator;
     private List<LineItem> lineItems = new ArrayList<>();
@@ -32,10 +30,7 @@ public class DomainCart implements Cart {
      * @param calculationEngine the calculation engine
      */
     @Autowired
-    public DomainCart(PriceEngine priceEngine,
-                      DomainValidator validator,
-                      CalculationEngine calculationEngine) {
-        this.priceEngine = priceEngine;
+    public DomainCart(DomainValidator validator, CalculationEngine calculationEngine) {
         this.validator = validator;
         this.calculationEngine = calculationEngine;
     }
@@ -44,7 +39,8 @@ public class DomainCart implements Cart {
      * Adds a domain name to a cart
      *
      * @param domain a valid domain name
-     * @throws IllegalArgumentException will be thrown if the domain name is not valid.
+     * @throws IllegalArgumentException will be thrown if the domain name is not
+     *                                  valid.
      */
     public LineItem addItem(String domain) {
         boolean isValid = validator.validate(domain);
@@ -57,7 +53,7 @@ public class DomainCart implements Cart {
     private LineItem addLineItem(String domain) {
         String tld = domain.substring(domain.lastIndexOf("."));
         DomainType domainType = DomainType.fromName(tld);
-        LineItem lineItem = new LineItem(domain, domainType, priceEngine.getPrice(domainType));
+        LineItem lineItem = new LineItem(domain, domainType);
         this.lineItems.add(lineItem);
         return lineItem;
     }

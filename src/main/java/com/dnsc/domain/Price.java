@@ -9,7 +9,7 @@ import java.util.Objects;
 public class Price implements Comparable<Price> {
     private BigDecimal fixedPrice;
     private BigDecimal volumePrice;
-    private int volume;
+    private long volume;
 
     /**
      * Instantiates a new Price.
@@ -18,7 +18,7 @@ public class Price implements Comparable<Price> {
      * @param volumePrice the volume price
      * @param volume      the volume
      */
-    public Price(BigDecimal fixedPrice, BigDecimal volumePrice, int volume) {
+    public Price(BigDecimal fixedPrice, BigDecimal volumePrice, long volume) {
         this.fixedPrice = fixedPrice;
         this.volumePrice = volumePrice;
         this.volume = volume;
@@ -70,7 +70,7 @@ public class Price implements Comparable<Price> {
      *
      * @return the volume
      */
-    public int getVolume() {
+    public long getVolume() {
         return volume;
     }
 
@@ -79,27 +79,24 @@ public class Price implements Comparable<Price> {
      *
      * @param volume the volume
      */
-    public void setVolume(int volume) {
+    public void setVolume(long volume) {
         this.volume = volume;
     }
 
     @Override
     public String toString() {
-        return "Price{" +
-                "fixedPrice=" + fixedPrice +
-                ", volumePrice=" + volumePrice +
-                ", volume=" + volume +
-                '}';
+        return "Price{" + "fixedPrice=" + fixedPrice + ", volumePrice=" + volumePrice + ", volume=" + volume + '}';
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         Price price = (Price) o;
-        return Objects.equals(fixedPrice, price.fixedPrice) &&
-                Objects.equals(volumePrice, price.volumePrice) &&
-                Objects.equals(volume, price.volume);
+        return Objects.equals(fixedPrice, price.fixedPrice) && Objects.equals(volumePrice, price.volumePrice)
+                && Objects.equals(volume, price.volume);
     }
 
     @Override

@@ -98,6 +98,7 @@ public class ShoppingCartTest {
         BigDecimal calculatedCart = shoppingCart.calculate();
         Assert.assertEquals(expectedTotal, calculatedCart);
     }
+
     @Test
     public void shouldAddDomainAndCalculateCartVolumePrice() {
 
@@ -108,7 +109,7 @@ public class ShoppingCartTest {
         shoppingCart.addItem("happy.com");
         shoppingCart.addItem("java-flavor.com");
 
-         // fixed price  $15.99
+        // fixed price  $15.99
         shoppingCart.addItem("google.com");
 
         // volume price $79.99
@@ -144,7 +145,7 @@ public class ShoppingCartTest {
             .info   $1.00 (no volume pricing)
          */
 
-        BigDecimal expectedTotal = BigDecimal.valueOf(45.99 + 15.99 + 79.99 + 29.99+ 3.00)
+        BigDecimal expectedTotal = BigDecimal.valueOf(45.99 + 15.99 + 79.99 + 29.99 + 3.00)
                 .setScale(2, RoundingMode.HALF_EVEN);
         BigDecimal calculatedCart = shoppingCart.calculate();
         Assert.assertEquals(expectedTotal, calculatedCart);

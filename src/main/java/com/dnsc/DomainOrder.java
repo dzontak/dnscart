@@ -31,15 +31,14 @@ public class DomainOrder implements Order {
      * @param calculationEngine the calculation engine
      */
     @Autowired
-    public DomainOrder(PriceEngine priceEngine, DomainValidator validator,
-                       CalculationEngine calculationEngine) {
+    public DomainOrder(PriceEngine priceEngine, DomainValidator validator, CalculationEngine calculationEngine) {
         this.priceEngine = priceEngine;
         this.validator = validator;
         this.calculationEngine = calculationEngine;
     }
 
     public Cart newShoppingCart() {
-        return new DomainCart(priceEngine, validator, calculationEngine);
+        return new DomainCart(validator, calculationEngine);
     }
 
     public Price setPrice(DomainType domainType, BigDecimal fixedPrice, BigDecimal volumePrice, int volume) {
