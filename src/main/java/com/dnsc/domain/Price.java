@@ -39,15 +39,6 @@ public class Price implements Comparable<Price> {
     }
 
     /**
-     * Sets fixed price.
-     *
-     * @param fixedPrice the fixed price
-     */
-    public void setFixedPrice(BigDecimal fixedPrice) {
-        this.fixedPrice = fixedPrice;
-    }
-
-    /**
      * Gets volume price.
      *
      * @return the volume price
@@ -57,30 +48,12 @@ public class Price implements Comparable<Price> {
     }
 
     /**
-     * Sets volume price.
-     *
-     * @param volumePrice the volume price
-     */
-    public void setVolumePrice(BigDecimal volumePrice) {
-        this.volumePrice = volumePrice;
-    }
-
-    /**
      * Gets volume.
      *
      * @return the volume
      */
     public long getVolume() {
         return volume;
-    }
-
-    /**
-     * Sets volume.
-     *
-     * @param volume the volume
-     */
-    public void setVolume(long volume) {
-        this.volume = volume;
     }
 
     @Override

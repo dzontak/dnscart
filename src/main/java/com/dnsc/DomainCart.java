@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * The type Domain cart.
@@ -39,10 +40,11 @@ public class DomainCart implements Cart {
      * Adds a domain name to a cart
      *
      * @param domain a valid domain name
-     * @throws IllegalArgumentException will be thrown if the domain name is not
-     *                                  valid.
+     * @throws IllegalArgumentException if the {@code domain} is not valid
+     * @throws NullPointerException     if {@code domain} is {@code null}
      */
     public LineItem addItem(String domain) {
+        Objects.requireNonNull(domain);
         boolean isValid = validator.validate(domain);
         if (!isValid) {
             throw new IllegalArgumentException("invalid domain");

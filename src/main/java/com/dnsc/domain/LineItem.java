@@ -30,30 +30,12 @@ public class LineItem {
     }
 
     /**
-     * Sets name.
-     *
-     * @param name the name
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
      * Gets domain type.
      *
      * @return the domain type
      */
     public DomainType getDomainType() {
         return domainType;
-    }
-
-    /**
-     * Sets domain type.
-     *
-     * @param domainType the domain type
-     */
-    public void setDomainType(DomainType domainType) {
-        this.domainType = domainType;
     }
 
     @Override
